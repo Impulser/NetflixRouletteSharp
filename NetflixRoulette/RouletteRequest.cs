@@ -1,5 +1,5 @@
 ﻿// ****************************************
-// Assembly : NetflixRoulette
+// Assembly : NetflixRouletteSharp
 // File     : RouletteRequest.cs
 // Author   : Alex Camilleri
 // ****************************************
