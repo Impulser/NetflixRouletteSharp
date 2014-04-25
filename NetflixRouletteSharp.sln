@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetflixRoulette", "NetflixRoulette\NetflixRoulette.csproj", "{66C8DE10-0154-493F-8E8A-A80533A0AFA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetflixRouletteSharp", "NetflixRoulette\NetflixRouletteSharp.csproj", "{66C8DE10-0154-493F-8E8A-A80533A0AFA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetflixRouletteSharpUsageExample", "UsageExample\NetflixRouletteSharpUsageExample.csproj", "{A8A1ECAE-7A42-4F8D-BDEE-2B7221B7027D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{66C8DE10-0154-493F-8E8A-A80533A0AFA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66C8DE10-0154-493F-8E8A-A80533A0AFA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66C8DE10-0154-493F-8E8A-A80533A0AFA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8A1ECAE-7A42-4F8D-BDEE-2B7221B7027D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A1ECAE-7A42-4F8D-BDEE-2B7221B7027D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A1ECAE-7A42-4F8D-BDEE-2B7221B7027D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A1ECAE-7A42-4F8D-BDEE-2B7221B7027D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -27,11 +27,21 @@ namespace NetflixRouletteSharp
         /// <value>The year.</value>
         public int Year { get; set; }
 
+        /// <summary>
+        ///     Returns a formatted API URL containing the request information.
+        /// </summary>
+        /// <value>The formatted API URL.</value>
+        /// <exception cref="T:NetflixRouletteSharp.RouletteRequestException">The request title cannot be null or white space</exception>
         public string ApiUrl
         {
             get
             {
-                var stringBuilder = new StringBuilder(NetflixRouletteSharp.NetflixRoulette.API_URL).AppendFormat("title={0}", Title);
+                if (string.IsNullOrWhiteSpace(Title))
+                {
+                    throw new RouletteRequestException("The request title cannot be null or white space. {0}", ToString());
+                }
+
+                var stringBuilder = new StringBuilder(NetflixRoulette.API_URL).AppendFormat("title={0}", Title.Replace(" ", "%20"));
                 return (Year > 0 ? stringBuilder.AppendFormat("&year={0}", Year) : stringBuilder).ToString();
             }
         }

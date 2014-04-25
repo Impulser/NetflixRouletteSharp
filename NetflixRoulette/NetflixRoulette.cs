@@ -61,21 +61,16 @@ namespace NetflixRouletteSharp
         {
             try
             {
-                var response = new RouletteResponse();
                 var httpWebReq = (HttpWebRequest) WebRequest.Create(requestData.ApiUrl);
                 using (var httpWebResp = (HttpWebResponse) httpWebReq.GetResponse())
                 {
-                    switch (httpWebResp.StatusCode)
+                    if (httpWebResp.StatusCode == HttpStatusCode.OK)
                     {
-                        case HttpStatusCode.OK:
-                            response = (RouletteResponse) new DataContractJsonSerializer(typeof(RouletteResponse)).ReadObject(httpWebResp.GetResponseStream());
-                            break;
-
-                        case HttpStatusCode.BadRequest:
-                            throw new RouletteRequestException("Bad Request {0}", requestData.ToString());
+                        return (RouletteResponse) new DataContractJsonSerializer(typeof(RouletteResponse)).ReadObject(httpWebResp.GetResponseStream());
                     }
+
+                    throw new RouletteRequestException("Unexpected HTTP Status Code ({0}: {1})", httpWebResp.StatusCode, httpWebResp.StatusDescription);
                 }
-                return response;
             }
             catch (Exception exception)
             {
